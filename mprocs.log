@@ -1,0 +1,3 @@
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"pwsh.exe -Command \"cmd:[\\\"npm\\\",\\\"run\\\",\\\"dev\\\"]\"\0"` in cwd `Some("C:\\Cohort Project\\n8n\\nodebase\0")` failed: The system cannot find the file specified. (os error 2)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"pwsh.exe -Command \"cmd:[\\\"npm\\\",\\\"run\\\",\\\"inngest:dev\\\"]\"\0"` in cwd `Some("C:\\Cohort Project\\n8n\\nodebase\0")` failed: The system cannot find the file specified. (os error 2)
+ERROR [portable_pty::win::psuedocon] CreateProcessW `"pwsh.exe -Command \"cmd:[\\\"npm\\\",\\\"run\\\",\\\"inngest:dev\\\"]\"\0"` in cwd `Some("C:\\Cohort Project\\n8n\\nodebase\0")` failed: The system cannot find the file specified. (os error 2)
