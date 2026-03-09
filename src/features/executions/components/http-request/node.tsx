@@ -5,11 +5,14 @@ import { GlobeIcon } from "lucide-react";
 import { memo, useState } from "react";
 import { BaseExecutionNode } from "../base-execution-node";
 import { HttpRequestFormValues, HttpRequestDialog } from "./dailog";
+import { useNodeStatus } from "../../hooks/use-node-status";
+import { HTTP_REQUEST_CHANNEL_NAME } from "@/inngest/channels/http-request";
+import { fetchHttpRequestRealtimeToken } from "./actions";
 
 type HttpRequestNodeData={
     variableName?:string;
     endpoint?:string;
-    method?:"GET" |"POST"|"PUT"|"PATCH"|"DELETE";
+    method?:"GET" | "POST" | "PUT" | "PATCH" | "DELETE";
     body?:string;
 };
 
@@ -20,7 +23,12 @@ export const HttpRequestNode=memo((props:NodeProps<HttpeRequestNodeType>)=>{
     const { setNodes }=useReactFlow(); 
 
     
-    const nodeStatus="initial";
+    const nodeStatus=useNodeStatus({
+        nodeId:props.id,
+        channel:HTTP_REQUEST_CHANNEL_NAME,
+        topic:"status",
+        refreshToken:fetchHttpRequestRealtimeToken
+    });
     
     const handleOpenSettings=()=>setDailogOpen(true);
 
