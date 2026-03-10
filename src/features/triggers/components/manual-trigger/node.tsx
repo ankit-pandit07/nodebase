@@ -2,7 +2,7 @@ import { NodeProps } from "@xyflow/react";
 import { memo, useState } from "react";
 import { BaseTriggerNode } from "../base-trigger-node";
 import {  MousePointerIcon } from "lucide-react";
-import { ManualTriggerDialog } from "../dailog";
+import { ManualTriggerDialog } from "./dailog";
 import { useNodeStatus } from "@/features/executions/hooks/use-node-status";
 import { MANUAL_TRIGGER_CHANNEL_NAME } from "@/inngest/channels/manual-trigger";
 import { fetchManualTriggerRealtimeToken } from "./actions";
