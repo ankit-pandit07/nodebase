@@ -14,6 +14,7 @@ export async function POST(request:NextRequest){
         )
         };
 
+
         const body=await request.json();
 
         const formData={
@@ -34,6 +35,11 @@ export async function POST(request:NextRequest){
                 googleForm:formData,
              }
            });
+
+        return NextResponse.json(
+            { success : true },
+            { status : 200 },
+        );
 
     } catch (error) {
         console.log("Google form webhook error:", error)
