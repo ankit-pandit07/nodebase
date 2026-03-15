@@ -11,6 +11,7 @@ import { googleFormTriggerChannel } from "./channels/google-form-trigger";
 import { stripeTriggerChannel } from "./channels/stripe-trigger";
 import { geminiChannel } from "./channels/gemini";
 import { discordChannel } from "./channels/discord";
+import { slackChannel } from "./channels/slack";
 
 export const executeWorkflow=inngest.createFunction(
     {
@@ -25,7 +26,8 @@ export const executeWorkflow=inngest.createFunction(
             googleFormTriggerChannel(),
             stripeTriggerChannel(),
             geminiChannel(),
-            discordChannel()
+            discordChannel(),
+            slackChannel()
         ]
     },
     async({event, step, publish})=>{
